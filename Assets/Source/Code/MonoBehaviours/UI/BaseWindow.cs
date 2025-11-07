@@ -13,29 +13,23 @@ namespace Source.Code.MonoBehaviours.UI
 
         public abstract void Init();
         
-        //TODO Transfer time management to the ECS system
-        
         public void Show()
         {
-            Time.timeScale = 0;
-            
             Sequence openSequence = DOTween.Sequence();
+
             openSequence
                 .Append(_windowBackground.transform.DOScale(1.2f, 0.2f))
-                .Append(_windowBackground.transform.DOScale(1f, 0.1f))
-                .SetUpdate(true);
+                .Append(_windowBackground.transform.DOScale(1f, 0.1f));
             
             gameObject.SetActive(true);
             openSequence.Play();
             
             _background.color = new Color(_background.color.r, _background.color.g, _background.color.b, 0);
-            _background.DOFade(0.97f, 0.3f).SetUpdate(true);
+            _background.DOFade(0.97f, 0.3f);
         }
 
         protected void Hide()
         {
-            Time.timeScale = 1;
-            
             Sequence closeSequence = DOTween.Sequence();
 
             closeSequence.Append(_windowBackground.transform.DOScale(0, 0.2f));
