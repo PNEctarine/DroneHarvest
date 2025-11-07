@@ -1,2 +1,66 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# ---------- General settings ----------
+# Normalize line endings to LF (Unix style)
+* text=auto eol=lf
+
+# ---------- Unity text-based assets ----------
+*.cs text diff=csharp
+*.shader text
+*.cginc text
+*.compute text
+*.hlsl text
+*.json text
+*.xml text
+*.yaml text
+*.yml text
+*.asmdef text
+*.meta text
+*.unity text merge=unityyamlmerge eol=lf
+*.prefab text merge=unityyamlmerge eol=lf
+*.mat text merge=unityyamlmerge eol=lf
+*.anim text merge=unityyamlmerge eol=lf
+*.controller text merge=unityyamlmerge eol=lf
+*.asset text merge=unityyamlmerge eol=lf
+
+# ---------- Scripts and configuration files ----------
+*.sh text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+*.md text
+*.txt text
+*.ini text
+*.cfg text
+*.gitignore text
+*.gitattributes text
+
+# ---------- Binary assets ----------
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.tga binary
+*.bmp binary
+*.gif binary
+*.ico binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.fbx binary
+*.blend binary
+*.dll binary
+*.exe binary
+*.zip binary
+*.rar binary
+*.7z binary
+*.unitypackage binary
+*.psd binary
+*.a binary
+*.so binary
+*.dylib binary
+
+# ---------- Unity Smart Merge ----------
+# Enables automatic YAML conflict resolution
+# (requires UnityYAMLMerge tool to be configured in Git)
+*.prefab merge=unityyamlmerge eol=lf
+*.unity merge=unityyamlmerge eol=lf
+*.asset merge=unityyamlmerge eol=lf
+*.meta merge=unityyamlmerge eol=lf
